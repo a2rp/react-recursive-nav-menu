@@ -1,0 +1,79 @@
+.container {
+    .navlinkHome {
+        // border: 1px solid #f00;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .parent {
+        height: 30px;
+        // border: 1px solid #f00;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px;
+        cursor: pointer;
+    }
+
+    .aboutNavlinksContainer {
+        padding-left: 30px;
+
+        .navlink {
+            display: flex;
+            height: 30px;
+            align-items: center;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .projectsLinksContainer {
+        padding-left: 30px;
+
+        .navlinkProject1,
+        .navlinkProject3 {
+            // border: 1px solid #f00;
+            display: flex;
+            align-items: center;
+            height: 30px;
+            text-decoration: none;
+            color: #000;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .project2 {
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 15px;
+            cursor: pointer;
+        }
+
+        .projects2Container {
+            padding-left: 45px;
+
+            .project2a,
+            .project2b {
+                height: 30px;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: #000;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
