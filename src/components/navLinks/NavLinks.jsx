@@ -1,50 +1,19 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import styles from "./styles.module.scss";
 
-const NavLinks = () => {
-    const [toggleAbout, setToggleAbout] = useState(false);
-    const [toggleProjects, setToggleProjects] = useState(false);
-    const [toggleProjects2, setToggleProjects2] = useState(false);
-
-    return (
-        <div className={styles.container}>
-            <NavLink
-                to="/home"
-                className={styles.navlinkHome}
-            >Home</NavLink>
-
-            <div className={styles.parent}
-                onClick={() => setToggleAbout(toggleAbout => !toggleAbout)}
-            >About <span>+</span></div>
-            {toggleAbout === true && <>
-                <div className={styles.aboutNavlinksContainer}>
-                    <NavLink to="/about/resume" className={styles.navlink}>Resume</NavLink>
-                    <NavLink to="/about/contact" className={styles.navlink}>Contact</NavLink>
-                </div>
-            </>}
-
-            <div className={styles.parent}
-                onClick={() => setToggleProjects(toggleProjects => !toggleProjects)}
-            >Projects <span>+</span></div>
-            {toggleProjects === true && <>
-                <div className={styles.projectsLinksContainer}>
-                    <NavLink to="/projects/project1" className={styles.navlinkProject1}>Project 1</NavLink>
-                    <div className={styles.project2}
-                        onClick={() => setToggleProjects2(projects2 => !projects2)}
-                    >Project2 <span>+</span></div>
-                    {toggleProjects2 === true && <>
-                        <div className={styles.projects2Container}>
-                            <NavLink to="/projects/project2/project2a" className={styles.project2a}>Project 2 a</NavLink>
-                            <NavLink to="/projects/project2/project2b" className={styles.project2b}>Project 2 b</NavLink>
-                        </div>
-                    </>}
-                    <NavLink to="/projects/project3" className={styles.navlinkProject3}>Project 3</NavLink>
-                </div>
-            </>}
-        </div>
-    )
-}
-
-export default NavLinks
-
+const linkClass = ({ isActive }) => `${styles.link} ${isActive ? styles.active : ""}`;
+const NavLinks = ({ onNavigate }) => {
+  const location = useLocation();
+  const [aboutOpen, setAboutOpen] = useState(location.pathname.startsWith("/about"));
+  const [projectsOpen, setProjectsOpen] = useState(location.pathname.startsWith("/projects"));
+  const [projectTwoOpen, setProjectTwoOpen] = useState(location.pathname.includes("/projects/project2"));
+  return <nav className={styles.container} aria-label="Primary navigation">
+    <NavLink to="/home" className={linkClass} onClick={onNavigate}>Home</NavLink>
+    <div className={styles.parentRow}><NavLink to="/about" className={linkClass} onClick={onNavigate}>About</NavLink><button type="button" className={styles.toggle} aria-label="Toggle About links" aria-expanded={aboutOpen} onClick={() => setAboutOpen((open) => !open)}>{aboutOpen ? "−" : "+"}</button></div>
+    {aboutOpen && <div className={styles.nested}><NavLink to="/about/resume" className={linkClass} onClick={onNavigate}>Resume</NavLink><NavLink to="/about/contact" className={linkClass} onClick={onNavigate}>Contact</NavLink></div>}
+    <div className={styles.parentRow}><NavLink to="/projects" className={linkClass} onClick={onNavigate}>Projects</NavLink><button type="button" className={styles.toggle} aria-label="Toggle Projects links" aria-expanded={projectsOpen} onClick={() => setProjectsOpen((open) => !open)}>{projectsOpen ? "−" : "+"}</button></div>
+    {projectsOpen && <div className={styles.nested}><NavLink to="/projects/project1" className={linkClass} onClick={onNavigate}>Project 1</NavLink><div className={styles.parentRow}><NavLink to="/projects/project2" className={linkClass} onClick={onNavigate}>Project 2</NavLink><button type="button" className={styles.toggle} aria-label="Toggle Project 2 links" aria-expanded={projectTwoOpen} onClick={() => setProjectTwoOpen((open) => !open)}>{projectTwoOpen ? "−" : "+"}</button></div>{projectTwoOpen && <div className={styles.deepNested}><NavLink to="/projects/project2/project2a" className={linkClass} onClick={onNavigate}>Project 2A</NavLink><NavLink to="/projects/project2/project2b" className={linkClass} onClick={onNavigate}>Project 2B</NavLink></div>}<NavLink to="/projects/project3" className={linkClass} onClick={onNavigate}>Project 3</NavLink></div>}
+  </nav>;
+};
+export default NavLinks;

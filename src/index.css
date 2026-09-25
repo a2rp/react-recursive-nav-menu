@@ -1,13 +1,3 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+* { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; min-width: 320px; background: #08111f; } body.menuOpen { overflow: hidden; } button, a { -webkit-tap-highlight-color: transparent; }
+.pageCard { max-width: 900px; margin: 0 auto; padding: clamp(24px,5vw,52px); border: 1px solid #294b70; border-radius: 20px; background: linear-gradient(140deg,rgba(18,37,62,.94),rgba(10,24,42,.94)); box-shadow: 0 22px 60px rgba(0,0,0,.22); }.pageCard h1 { margin: 0 0 14px; color: #edf5ff; font-size: clamp(2rem,5vw,4rem); line-height: 1; letter-spacing: -.045em; }.pageCard h2 { margin: 28px 0 8px; color: #78c5ff; font-size: 1.3rem; }.pageCard p { color: #a8bad0; font-size: 1.02rem; }.pageCard ul { padding-left: 20px; color: #c8d8e9; }.pageCard li { margin: 8px 0; }.pageLink { color: #78c5ff; text-decoration: none; }.pageLink:hover { text-shadow: 0 0 12px rgba(120,197,255,.5); }.pageGrid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin-top: 24px; }.pageTile { padding: 18px; border: 1px solid #294b70; border-radius: 13px; background: rgba(8,17,31,.45); }.pageTile h3 { margin: 0 0 7px; color: #edf5ff; }.pageTile p { margin: 0; font-size: .92rem; }.routeOutlet { margin-top: 24px; padding-top: 24px; border-top: 1px solid #294b70; }
+@media(max-width:650px){.pageGrid{grid-template-columns:1fr}}

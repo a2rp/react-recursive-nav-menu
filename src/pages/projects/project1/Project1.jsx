@@ -1,9 +1,2 @@
-import React from 'react'
-
-const Project1 = () => {
-    return (
-        <div>Project1</div>
-    )
-}
-
-export default Project1
+const Project1=()=> <div><h2>Project 1</h2><p>This page represents a first-level project route in the navigation tree.</p></div>;
+export default Project1;

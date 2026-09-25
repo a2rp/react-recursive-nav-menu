@@ -1,9 +1,3 @@
-import React from 'react'
-
-const Home = () => {
-    return (
-        <div>Home</div>
-    )
-}
-
-export default Home
+import { Link } from "react-router-dom";
+const Home=()=> <section className="pageCard"><p className="eyebrow">Frontend navigation study</p><h1>Recursive Navigation</h1><p>A focused React example for nested navigation trees, expandable groups and route-aware page layouts.</p><div className="pageGrid"><article className="pageTile"><h3>Expandable groups</h3><p>Parent links and toggle controls stay separate so navigation and disclosure have clear jobs.</p></article><article className="pageTile"><h3>Nested routes</h3><p>Explore the About and Projects branches to see multi-level route content.</p></article></div><p><Link className="pageLink" to="/projects">Browse the project routes ↗</Link></p></section>;
+export default Home;

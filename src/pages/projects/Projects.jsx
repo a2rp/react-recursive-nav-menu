@@ -1,9 +1,3 @@
-import React from 'react'
-
-const Projects = () => {
-    return (
-        <div>Projects</div>
-    )
-}
-
-export default Projects
+import { Outlet, Link } from "react-router-dom";
+const Projects=()=> <section className="pageCard"><p className="eyebrow">Route collection</p><h1>Projects</h1><p>Each card maps to a nested route. Project 2 has one more level to demonstrate recursive navigation.</p><div className="pageGrid"><article className="pageTile"><h3>Project 1</h3><p>A simple child route.</p><Link className="pageLink" to="project1">Open project 1 ↗</Link></article><article className="pageTile"><h3>Project 2</h3><p>A parent route with two child routes.</p><Link className="pageLink" to="project2">Open project 2 ↗</Link></article><article className="pageTile"><h3>Project 3</h3><p>Another sibling route.</p><Link className="pageLink" to="project3">Open project 3 ↗</Link></article></div><div className="routeOutlet"><Outlet /></div></section>;
+export default Projects;

@@ -1,10 +1,2 @@
-import React from 'react'
-
-const Project3 = () => {
-    return (
-        <div>Project3</div>
-    )
-}
-
-export default Project3
-
+const Project3=()=> <div><h2>Project 3</h2><p>This page represents a sibling route under Projects.</p></div>;
+export default Project3;

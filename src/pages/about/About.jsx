@@ -1,9 +1,3 @@
-import React from 'react'
-
-const About = () => {
-    return (
-        <div>About</div>
-    )
-}
-
-export default About
+import { Outlet, Link } from "react-router-dom";
+const About=()=> <section className="pageCard"><p className="eyebrow">About this demo</p><h1>About</h1><p>This project demonstrates a clean recursive menu where related pages can live under a shared parent route.</p><div className="pageGrid"><article className="pageTile"><h3>Resume</h3><p>See the resume route and keep learning paths grouped under About.</p><Link className="pageLink" to="resume">Open resume ↗</Link></article><article className="pageTile"><h3>Contact</h3><p>Use the contact route as another child page in the same navigation tree.</p><Link className="pageLink" to="contact">Open contact ↗</Link></article></div><div className="routeOutlet"><Outlet /></div></section>;
+export default About;

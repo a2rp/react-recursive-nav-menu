@@ -1,10 +1,3 @@
-import React from 'react'
-
-const Project2 = () => {
-    return (
-        <div>Project2</div>
-    )
-}
-
-export default Project2
-
+import { Outlet, Link } from "react-router-dom";
+const Project2=()=> <div><h2>Project 2</h2><p>This route contains a second level with Project 2A and Project 2B.</p><div className="pageGrid"><article className="pageTile"><h3>Project 2A</h3><Link className="pageLink" to="project2a">Open 2A ↗</Link></article><article className="pageTile"><h3>Project 2B</h3><Link className="pageLink" to="project2b">Open 2B ↗</Link></article></div><div className="routeOutlet"><Outlet /></div></div>;
+export default Project2;

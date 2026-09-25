@@ -1,9 +1,2 @@
-import React from 'react'
-
-const Resume = () => {
-    return (
-        <div>Resume</div>
-    )
-}
-
-export default Resume
+const Resume=()=> <div><h2>Resume</h2><p>Frontend developer focused on accessible, responsive interfaces and practical React architecture.</p><ul><li>Reusable component design</li><li>Responsive layout systems</li><li>Clear route and state management</li></ul></div>;
+export default Resume;
