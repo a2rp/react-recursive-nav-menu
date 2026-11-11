@@ -12,13 +12,13 @@ A responsive React demonstration of expandable navigation groups, active routes 
 
 ## Tech Stack
 
-React, JavaScript, React Router, Create React App, Sass and CSS Modules.
+React, JavaScript, React Router, Vite, Sass and CSS Modules. Use Node.js 20.19+ or 22.12+.
 
 ## Run locally
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
 ## Build and deploy

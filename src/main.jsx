@@ -5,4 +5,4 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<BrowserRouter basename={process.env.PUBLIC_URL}><App /></BrowserRouter>);
+root.render(<BrowserRouter basename={import.meta.env.BASE_URL}><App /></BrowserRouter>);
