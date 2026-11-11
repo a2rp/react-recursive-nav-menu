@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import styles from "./styles.module.scss";
 
@@ -8,6 +8,11 @@ const NavLinks = ({ onNavigate }) => {
   const [aboutOpen, setAboutOpen] = useState(location.pathname.startsWith("/about"));
   const [projectsOpen, setProjectsOpen] = useState(location.pathname.startsWith("/projects"));
   const [projectTwoOpen, setProjectTwoOpen] = useState(location.pathname.includes("/projects/project2"));
+  useEffect(() => {
+    if (location.pathname.startsWith("/about")) setAboutOpen(true);
+    if (location.pathname.startsWith("/projects")) setProjectsOpen(true);
+    if (location.pathname.startsWith("/projects/project2")) setProjectTwoOpen(true);
+  }, [location.pathname]);
   return <nav className={styles.container} aria-label="Primary navigation">
     <NavLink to="/home" className={linkClass} onClick={onNavigate}>Home</NavLink>
     <div className={styles.parentRow}><NavLink to="/about" className={linkClass} onClick={onNavigate}>About</NavLink><button type="button" className={styles.toggle} aria-label="Toggle About links" aria-expanded={aboutOpen} onClick={() => setAboutOpen((open) => !open)}>{aboutOpen ? "−" : "+"}</button></div>

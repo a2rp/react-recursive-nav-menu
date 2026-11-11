@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
 import PageRoutes from "./pageRoutes";
@@ -8,7 +8,6 @@ const links = [["Portfolio", "https://www.ashishranjan.net/", "↗"], ["GitHub",
 
 const App = () => {
   const [navOpen, setNavOpen] = useState(false);
-  useEffect(() => { document.body.classList.toggle("menuOpen", navOpen); return () => document.body.classList.remove("menuOpen"); }, [navOpen]);
   return <div className={styles.container}>
     <header className={styles.header}><Link className={styles.brand} to="/home"><img src={`${import.meta.env.BASE_URL}logo.png`} alt="Ashish Ranjan logo" /><span>Recursive Navigation</span></Link><button className={styles.menuButton} type="button" aria-label="Toggle navigation" aria-expanded={navOpen} onClick={() => setNavOpen((open) => !open)}>{navOpen ? "×" : "☰"}</button></header>
     <div className={styles.layout}><aside className={`${styles.navContainer} ${navOpen ? styles.navOpen : ""}`}><div className={styles.navHeading}>Navigation</div><NavLinks onNavigate={() => setNavOpen(false)} /></aside><main className={styles.main}><PageRoutes /></main></div>

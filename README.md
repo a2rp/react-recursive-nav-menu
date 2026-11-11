@@ -6,7 +6,8 @@ A responsive React demonstration of expandable navigation groups, active routes 
 
 - Fixed branded header with a mobile navigation drawer
 - Expandable About and Projects groups with independent toggle controls
-- Nested React Router routes with active link states
+- Nested React Router routes with active link states and route-aware expanded groups
+- Hash-based URLs so nested pages load directly on GitHub Pages
 - Route changes scroll the content area to the top
 - Responsive page cards, icon-only footer links and dynamic copyright
 
